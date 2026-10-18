@@ -4,13 +4,12 @@ import "./index.css";
 import App from "./App.jsx";
 import Layout from "./layout/Layout";
 import { PageProvider } from "./layout/PageContext";
+import { BrowserRouter } from "react-router";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <PageProvider>
-      <Layout>
-        <App />
-      </Layout>
-    </PageProvider>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </StrictMode>,
 );

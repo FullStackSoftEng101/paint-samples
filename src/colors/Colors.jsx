@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import { usePage } from "../layout/PageContext";
 
 const COLORS = [
@@ -32,15 +33,17 @@ export default function Colors() {
 
 /** A swatch that navigates the user to the wallpaper of that color */
 function Swatch({ color }) {
-  const { setPage } = usePage();
+  // const { setPage } = usePage();
   return (
     <li>
-      <a onClick={() => setPage("colors/" + color)}>
+      <Link to={`/colors/${color}`}>
+        {/* <a onClick={() => setPage("colors/" + color)}> */}
         <figure className="swatch">
           <div style={{ background: color }}></div>
           <figcaption>{color}</figcaption>
         </figure>
-      </a>
+        {/* </a> */}
+      </Link>
     </li>
   );
 }

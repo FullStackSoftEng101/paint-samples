@@ -1,13 +1,26 @@
-import { usePage } from "./PageContext";
+import { NavLink } from "react-router";
+// import { usePage } from "./PageContext";
 
 /** Site navigation links */
 export default function Navbar() {
-  const { page, setPage } = usePage();
+  // const { page, setPage } = usePage();
   return (
     <header>
       <p>Paint Samples</p>
       <nav>
-        <a
+        <NavLink
+          to="/"
+          className={({ isActive }) => (isActive ? "active" : "")}
+        >
+          Home
+        </NavLink>
+        <NavLink
+          to="/colors"
+          className={({ isActive }) => (isActive ? "active" : "")}
+        >
+          Colors
+        </NavLink>
+        {/* <a
           className={page === "home" ? "active" : ""}
           onClick={() => {
             setPage("home");
@@ -22,7 +35,7 @@ export default function Navbar() {
           }}
         >
           Colors
-        </a>
+        </a> */}
       </nav>
     </header>
   );
